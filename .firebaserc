@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "hiv-ninja": {
+      "hosting": {
+        "hiv-ninja": [
+          "hiv-ninja"
+        ]
+      }
+    }
+  }
+}
