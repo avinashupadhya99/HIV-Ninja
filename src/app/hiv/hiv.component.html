@@ -1,1 +1,3 @@
-<p>hiv works!</p>
+<mat-grid-list cols="3" class="grid-list">
+  <mat-grid-tile *ngFor="let info of infoCards"><div class="info-grid"><app-info-card [info]="info"></app-info-card></div></mat-grid-tile>
+</mat-grid-list>
