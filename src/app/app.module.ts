@@ -11,7 +11,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSelectModule } from '@angular/material/select'
+import { MatSelectModule } from '@angular/material/select';
+import { MatListModule } from '@angular/material/list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,9 @@ import { AuthenticationService } from 'src/providers/authentication.service';
 import { CreateTopicComponent } from './create-topic/create-topic.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
+import { TopicListComponent } from './topic-list/topic-list.component';
+import { TopicComponent } from './topic/topic.component';
+import { TopicsService } from 'src/providers/topics.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,9 @@ import { ProfileComponent } from './profile/profile.component';
     InfoCardComponent,
     LoginComponent,
     CreateTopicComponent,
-    ProfileComponent
+    ProfileComponent,
+    TopicListComponent,
+    TopicComponent
   ],
   imports: [
     BrowserModule,
@@ -55,9 +61,13 @@ import { ProfileComponent } from './profile/profile.component';
     MatCardModule,
     MatInputModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatListModule
   ],
-  providers: [AuthenticationService],
+  providers: [
+    AuthenticationService,
+    TopicsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

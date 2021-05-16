@@ -1,4 +1,5 @@
 <div class="support">
   <h1>Welcome to HIV Ninja's Support Group</h1>
+  <app-topic-list *ngFor="let topic of topics" [topicDetails]="topic" (click)="redirectToTopic(topic)"></app-topic-list>
   <app-create-topic></app-create-topic>
 </div>

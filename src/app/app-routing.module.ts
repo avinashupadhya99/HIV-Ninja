@@ -5,9 +5,11 @@ import { HivComponent } from './hiv/hiv.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SupportComponent } from './support/support.component';
+import { TopicComponent } from './topic/topic.component';
 
 const routes: Routes = [
   { path: 'login', component:  LoginComponent, pathMatch: 'full'},
+  { path: 'topic/:id', component:  TopicComponent, pathMatch: 'full'},
   { path: 'profile', component:  ProfileComponent, pathMatch: 'full'},
   { path: 'support', component:  SupportComponent, pathMatch: 'full'},
   { path: 'about', component:  AboutComponent, pathMatch: 'full'},
