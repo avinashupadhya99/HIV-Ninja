@@ -28,6 +28,7 @@ export class AuthenticationService {
         const doc: any = await userRef.get();
         console.log(doc);
         if (!doc.exists) {
+          userRef.ref.set(this.userPayload);
           this.router.navigate(['/profile']);
         } else {
           this.router.navigate(['/support']);

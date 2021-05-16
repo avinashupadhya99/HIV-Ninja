@@ -7,5 +7,9 @@
         ]
       }
     }
+  },
+  "projects": {
+    "prod": "hiv-ninja",
+    "default": "hiv-ninja"
   }
 }
