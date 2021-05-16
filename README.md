@@ -1,6 +1,6 @@
 # HivNinja
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
+This project was created for GileadHacks4HIV 2021 and is an online support group for HIV positive patients.
 
 ## Development server
 
