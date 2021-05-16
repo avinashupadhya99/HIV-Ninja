@@ -2,5 +2,6 @@
   <h1>{{topic.topic}}</h1>
   <div>~ {{topic.userDetails.name}}<small class="created-date">{{topic.created_date}}</small></div>
 
+  <app-topic-comments *ngFor="let comment of comments" [comment]="comment"></app-topic-comments>
   <app-add-topic-comment [topic]="topic.id"></app-add-topic-comment>
 </div>

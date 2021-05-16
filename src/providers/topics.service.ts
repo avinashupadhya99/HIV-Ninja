@@ -30,17 +30,21 @@ export class TopicsService {
     });
 
 
-    this.store.collection('topic-comments').ref.onSnapshot(querySnapshot => {
+    this.store.collection('topic-comments').ref.onSnapshot(async (querySnapshot) => {
       let comms = [];
-      querySnapshot.docs.forEach(async (commentDoc: any) => {
-        let commentData = commentDoc.data();
-        const userDoc: any  = await this.store.collection('users').doc(commentDoc.data().user).ref.get();
+      console.log(querySnapshot.docs);
+      // querySnapshot.docs.forEach(async (commentDoc: any) => {
+      for(let commentDoc of querySnapshot.docs) {
+        console.log(commentDoc.data());
+        let commentData:any = commentDoc.data();
+        const userDoc: any  = await this.store.collection('users').doc(commentData.user).ref.get();
         if(userDoc.exists) {
           commentData.userDetails = userDoc.data();
         }
         commentData.id = commentDoc.id;
+        console.log(commentData);
         comms.push(commentData);
-      });
+      }
       this.comments = comms;
       console.log(this.comments);
       this.commentsChanged.next();
@@ -63,6 +67,7 @@ export class TopicsService {
   }
 
   getCommentsByTopicID(topicID: string) {
-    return this.comments.filter(comment => comment.topic === topicID);
+    console.log(this.comments);
+    return this.comments.filter(comment => comment.topic == topicID);
   }
 }

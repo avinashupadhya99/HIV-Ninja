@@ -1,1 +1,5 @@
-<p>topic-comments works!</p>
+<mat-card class="comment-card">
+  <mat-card-header><h4 class="comment-user">{{comment.userDetails.name}}</h4></mat-card-header>
+  <mat-card-subtitle>{{comment.created_date}}</mat-card-subtitle>
+  {{comment.comment}}
+</mat-card>
