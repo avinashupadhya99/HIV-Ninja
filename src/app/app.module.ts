@@ -9,6 +9,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +23,8 @@ import { SupportComponent } from './support/support.component';
 import { InfoCardComponent } from './info-card/info-card.component';
 import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from 'src/providers/authentication.service';
+import { CreateTopicComponent } from './create-topic/create-topic.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,19 +35,23 @@ import { AuthenticationService } from 'src/providers/authentication.service';
     HivComponent,
     SupportComponent,
     InfoCardComponent,
-    LoginComponent
+    LoginComponent,
+    CreateTopicComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     MatToolbarModule,
     MatIconModule,
     MatTabsModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]
