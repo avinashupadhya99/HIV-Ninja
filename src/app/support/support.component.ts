@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/providers/authentication.service';
 
 @Component({
   selector: 'app-support',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SupportComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
+    console.log(this.authenticationService.userPayload);
   }
 
 }

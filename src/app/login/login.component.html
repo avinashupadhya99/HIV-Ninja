@@ -1,0 +1,10 @@
+<div class="containerStyle">
+  <section>
+    <h1>Login into HIV Ninja {{authenticationService.isLoggedIn}}</h1>
+      <div class="loggedin" *ngIf="authenticationService.isLoggedIn">
+        <h2>User Successful login</h2>
+      </div>
+    <div class="formContainer" id="sawo-container" *ngIf="!authenticationService.isLoggedIn">
+    </div>
+  </section>
+</div>
