@@ -13,9 +13,10 @@ export class SupportComponent implements OnInit, OnDestroy {
   topicsSubscription: Subscription = new Subscription;
 
   constructor(private router: Router, private topicsService: TopicsService) {
+    this.topics = this.topicsService.topics;
     this.topicsSubscription = this.topicsService.topicsChanged.subscribe(() => {
       this.topics = this.topicsService.topics;
-    })
+    });
   }
 
   ngOnInit(): void {
