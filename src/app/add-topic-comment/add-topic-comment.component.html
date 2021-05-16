@@ -1,0 +1,11 @@
+<form [formGroup]="addCommentForm" (ngSubmit)="onSubmit()">
+  <div class="form-grid">
+    <mat-form-field>
+      <mat-label>Comment</mat-label>
+      <textarea matInput
+      formControlName="comment"
+      [disabled]="!authenticationService.isLoggedIn"></textarea>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" [disabled]="!authenticationService.isLoggedIn">Add Comment</button>
+  </div>
+</form>

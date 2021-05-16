@@ -31,7 +31,8 @@ export class CreateTopicComponent implements OnInit {
       }
       const data = {
         user: this.authenticationService.userPayload.user_id,
-        topic: this.createTopicForm.value.topic
+        topic: this.createTopicForm.value.topic,
+        created_date: new Date().toJSON().slice(0,10).split('-').reverse().join('-')
       }
       console.log(data);
       this.store.collection('topics').add(data).then(() => {

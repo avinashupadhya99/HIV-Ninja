@@ -7,7 +7,9 @@ import { Subject } from 'rxjs';
 })
 export class TopicsService {
   topics: any[] = [];
+  comments: any[] = [];
   topicsChanged = new Subject<void>();
+  commentsChanged = new Subject<void>();
 
   constructor(private store: AngularFirestore) {
     const topicsCollection = this.store.collection('topics').ref;
@@ -26,6 +28,23 @@ export class TopicsService {
       console.log(this.topics);
       this.topicsChanged.next();
     });
+
+
+    this.store.collection('topic-comments').ref.onSnapshot(querySnapshot => {
+      let comms = [];
+      querySnapshot.docs.forEach(async (commentDoc: any) => {
+        let commentData = commentDoc.data();
+        const userDoc: any  = await this.store.collection('users').doc(commentDoc.data().user).ref.get();
+        if(userDoc.exists) {
+          commentData.userDetails = userDoc.data();
+        }
+        commentData.id = commentDoc.id;
+        comms.push(commentData);
+      });
+      this.comments = comms;
+      console.log(this.comments);
+      this.commentsChanged.next();
+    });
   }
 
   async getTopicByID(id: string) {
@@ -41,5 +60,9 @@ export class TopicsService {
     } else {
       // Handle 404
     }
+  }
+
+  getCommentsByTopicID(topicID: string) {
+    return this.comments.filter(comment => comment.topic === topicID);
   }
 }

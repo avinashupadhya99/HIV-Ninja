@@ -31,6 +31,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { TopicListComponent } from './topic-list/topic-list.component';
 import { TopicComponent } from './topic/topic.component';
 import { TopicsService } from 'src/providers/topics.service';
+import { TopicCommentsComponent } from './topic-comments/topic-comments.component';
+import { AddTopicCommentComponent } from './add-topic-comment/add-topic-comment.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { TopicsService } from 'src/providers/topics.service';
     CreateTopicComponent,
     ProfileComponent,
     TopicListComponent,
-    TopicComponent
+    TopicComponent,
+    TopicCommentsComponent,
+    AddTopicCommentComponent
   ],
   imports: [
     BrowserModule,
