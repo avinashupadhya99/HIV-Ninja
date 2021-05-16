@@ -12,7 +12,7 @@ export class CreateTopicComponent implements OnInit {
   authenticationService: AuthenticationService;
   createTopicForm: FormGroup = new FormGroup({
     'topic': new FormControl(null, [Validators.required, Validators.maxLength(350)])
-  })
+  });
 
   constructor(authenticationService: AuthenticationService, private store: AngularFirestore) {
     this.authenticationService = authenticationService;

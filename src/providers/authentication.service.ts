@@ -26,8 +26,8 @@ export class AuthenticationService {
         this.isLoggedIn = true;
         const userRef = this.store.collection('users').doc(payload.user_id);
         const doc: any = await userRef.get();
+        console.log(doc);
         if (!doc.exists) {
-          // this.store.collection('users').doc(payload.user_id).set(payload);
           this.router.navigate(['/profile']);
         } else {
           this.router.navigate(['/support']);

@@ -11,6 +11,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from 'src/providers/authentication.service';
 import { CreateTopicComponent } from './create-topic/create-topic.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SupportComponent,
     InfoCardComponent,
     LoginComponent,
-    CreateTopicComponent
+    CreateTopicComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatGridListModule,
     MatCardModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]

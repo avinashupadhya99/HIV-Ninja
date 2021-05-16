@@ -1,0 +1,35 @@
+<div class="profile">
+  <h1>Welcome to HIV Ninja, thank you for signing up!</h1>
+  <h3>We would love to know more about you</h3>
+  <form [formGroup]="userProfileForm" (ngSubmit)="onSubmit()">
+    <div>
+      <mat-form-field>
+        <mat-label>Full Name</mat-label>
+        <input matInput type="text" formControlName="name" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Age</mat-label>
+        <input matInput type="number" formControlName="age" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Are you an HIV patient?</mat-label>
+        <mat-select formControlName="hiv">
+          <mat-option *ngFor="let hivOption of hivOptions" [value]="hivOption">
+            {{hivOption}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <button type="submit" mat-raised-button color="primary">Update Profile</button>
+  </form>
+</div>
